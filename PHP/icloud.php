@@ -57,8 +57,9 @@
 <?php
 	//Define iCloud URLs
 	$icloudUrls = array();
-	for($i = 1; $i < 25; $i++)
+	for($i = 1; $i < 25; $i++) {
 		$icloudUrls[] = "https://p".str_pad($i, 2, '0', STR_PAD_LEFT)."-caldav.icloud.com";
+	}
 	
 	//Functions
 	function doRequest($user, $pw, $url, $xml)
@@ -92,11 +93,11 @@
                 <table border='0'>
                     <tr>
                         <td><b style='color:blue;'>Apple ID: </b></td>
-                        <td><input type='text' name='appleID' id='appleID' size='50' value='<? echo isset($_POST['appleID']) ? $_POST['appleID'] : "";?>'></td>
+                        <td><input type='text' name='appleID' id='appleID' size='50' value='<?php echo isset($_POST['appleID']) ? $_POST['appleID'] : ""; ?>'></td>
                     </tr>
                     <tr>
                         <td><b style='color:blue;'>Password: </b></td>
-                        <td><input type='password' name='pw' id='pw' size='50' value='<? echo isset($_POST['appleID']) ? $_POST['pw'] : "";?>'></td>
+                        <td><input type='password' name='pw' id='pw' size='50' value='<?php echo isset($_POST['appleID']) ? $_POST['pw'] : ""; ?>'></td>
                     </tr>
                     <tr>
                     	<td><b style='color:blue;'>iCloud server: </b></td>
